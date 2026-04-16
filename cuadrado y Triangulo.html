@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráfico de Barras</title>
+</head>
+<body>
+
+<h2>Gráfico de Barras</h2>
+<h3>PANUERA HUARHUA MAX KERVIN</h3>
+
+<canvas id="myCanvas" width="500" height="500" style="border:3px solid black;"></canvas>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    // Dibujar SOLO ejes (no cuadro)
+    ctx.beginPath();
+    ctx.moveTo(50, 450); // eje X
+    ctx.lineTo(450, 450);
+
+    ctx.moveTo(50, 450); // eje Y
+    ctx.lineTo(50, 50);
+
+    ctx.stroke();
+
+    // Datos
+    var datos = [50, 60, 70, 90, 100];
+    var colores = ["red", "blue", "green", "orange", "purple"];
+
+    var x = 80;
+    var ancho = 50;
+
+    for (var i = 0; i < datos.length; i++) {
+
+        var valor = datos[i];
+        var altura = valor * 3;
+
+        ctx.fillStyle = colores[i];
+
+        // Barra
+        ctx.fillRect(x, 450 - altura, ancho, altura);
+
+        // Texto
+        ctx.fillStyle = "black";
+        ctx.font = "14px Arial";
+        ctx.fillText(valor + "%", x + 5, 450 - altura - 5);
+
+        x += 70;
+    }
+
+</script>
+
+</body>
+</html>
