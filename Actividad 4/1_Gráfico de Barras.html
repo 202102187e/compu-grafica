@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 1 - Barras</title>
+
+<style>
+    body {
+        font-family: Arial;
+        text-align: center;
+        background: #f4f4f4;
+    }
+
+    #bar-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 200px;
+        margin: 40px auto;
+        width: 300px;
+        border: 2px solid #333;
+        background: white;
+    }
+
+    .bar {
+        width: 40px;
+        margin: 0 5px;
+        background: steelblue;
+        transition: height 0.5s;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Ejercicio 1: Gráfico de Barras Dinámico</h2>
+
+<div id="bar-container"></div>
+
+<script>
+const container = document.getElementById("bar-container");
+let bars = [];
+
+// Crear barras
+for (let i = 0; i < 5; i++) {
+    let bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.style.height = "50px";
+    container.appendChild(bar);
+    bars.push(bar);
+}
+
+// Actualizar
+function updateBars() {
+    bars.forEach(bar => {
+        let value = Math.floor(Math.random() * 91) + 10;
+        bar.style.height = value * 2 + "px";
+    });
+}
+
+setInterval(updateBars, 1000);
+</script>
+
+</body>
+</html>

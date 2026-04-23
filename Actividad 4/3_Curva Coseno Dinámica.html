@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 3 - Coseno</title>
+
+<style>
+    body {
+        text-align: center;
+        background: #f4f4f4;
+    }
+
+    canvas {
+        background: white;
+        border: 2px solid #333;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Ejercicio 3: Curva Dinámica Coseno</h2>
+
+<canvas id="canvas" width="400" height="250"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let offset = 0;
+
+function drawCosine() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+
+    for (let x = 0; x < canvas.width; x++) {
+        let angle = (x + offset) * 0.05;
+        let y = canvas.height / 2 + Math.cos(angle) * 50;
+
+        if (x === 0) {
+            ctx.moveTo(x, y);
+        } else {
+            ctx.lineTo(x, y);
+        }
+    }
+
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    offset += 5;
+}
+
+setInterval(drawCosine, 1000);
+drawCosine();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 2 - Puntos</title>
+
+<style>
+    body {
+        text-align: center;
+        background: #f4f4f4;
+    }
+
+    canvas {
+        background: white;
+        border: 2px solid #333;
+        margin-top: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+<h2>Ejercicio 2: Puntos en Movimiento</h2>
+
+<canvas id="canvas" width="400" height="250"></canvas>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let points = [];
+
+// Crear puntos
+for (let i = 0; i < 5; i++) {
+    points.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height
+    });
+}
+
+function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    points.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+    });
+}
+
+function update() {
+    points.forEach(p => {
+        p.x = Math.random() * canvas.width;
+        p.y = Math.random() * canvas.height;
+    });
+
+    draw();
+}
+
+draw();
+setInterval(update, 1000);
+</script>
+
+</body>
+</html>
