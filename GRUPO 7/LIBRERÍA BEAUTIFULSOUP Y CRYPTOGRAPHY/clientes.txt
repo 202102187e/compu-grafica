@@ -1,0 +1,18 @@
+=============================================================
+     DATOS CONFIDENCIALES DE CLIENTES — USO INTERNO
+     Soluciones Financieras Andinas S.A.C.
+     Fecha: 2026-06-24  |  Clasificación: SECRETO
+=============================================================
+
+ID  | Nombre Completo             | DNI       | Correo Electrónico      | Saldo (S/.)
+----|-----------------------------|-----------| ------------------------|-------------
+001 | García Quispe, Rosa María   | 40123456  | rgarcia@email.com       |  12,500.00
+002 | Mamani Torres, Juan Carlos  | 41987654  | jmamani@email.com       |   8,750.50
+003 | Huanca Flores, Ana Lucía    | 43215678  | ahuanca@email.com       |  45,200.00
+004 | Condori Paz, Pedro Alonso   | 44561234  | pcondori@email.com      |   3,100.75
+005 | Apaza Rios, Carmen Elena    | 46789012  | capaza@email.com        | 120,000.00
+
+=============================================================
+Ley N° 29733 — Protección de Datos Personales del Perú.
+La divulgación no autorizada está sujeta a sanciones legales.
+=============================================================
